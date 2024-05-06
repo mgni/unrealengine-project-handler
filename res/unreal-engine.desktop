@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Unreal Engine 5.4.0
+Comment=A 3D game engine by Epic Games which can be used non-commercially for free
+Exec=unrealengine %F -nohighdpi
+Icon=unreal-engine
+Terminal=false
+Type=Application
+Categories=Development;Graphics;Game;
+MimeType=application/x-uproject;
