@@ -2,7 +2,11 @@
 
 ## A bash script for Unreal Engine on Linux
 
-This script can automate creation of .desktop file and .uproject file association system wide. This script use `xdg-utils`, `python`, `magick` tools. These tools should be preinstalled on the system. Extra icons are included in res/icon/extra/
+This script can automate creation of
+- .desktop file
+- .uproject file association to the system. So you can open .uproject file by double clicking from file manager
+- service menu file for `Dolphin`
+-  This script use `xdg-utils`, `python`, `magick` tools. These tools should be preinstalled on the system. Extra icons are included in res/icon/extra/
 
 Download the Unreal Engine and Bridge zip files from \
 https://www.unrealengine.com/en-US/linux
@@ -21,7 +25,7 @@ Find the "Engine" folder and put these folder and files along with "Engine" fold
 Install .desktop and .uproject icons
 
 ```bash
-  $ sudo chmod +x install.sh && sudo ./install.sh
+  $ chmod +x install.sh && ./install.sh
 ```
 
 ## Uninstallation
@@ -29,7 +33,7 @@ Install .desktop and .uproject icons
 Uninstall .desktop and .uproject icons
 
 ```bash
-  $ sudo chmod +x uninstall.sh && sudo ./uninstall.sh
+  $ chmod +x uninstall.sh && ./uninstall.sh
 ```
 
 ## Execute Unreal Engine from terminal
