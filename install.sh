@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #-------- Configuration Section Start -----------
 
@@ -23,7 +23,8 @@ ENGINE_FLAGS="-nohighdpi"
 if [ $MODE == "user" ]; then
     echo The MODE is user
     SHARE_DIR="$HOME/.local/share"
-    SHELL_DIR="$HOME/.local/bin"
+    #SHELL_DIR="$HOME/.local/bin"
+    SHELL_DIR="$HOME/bin" #for ArchLinux/ZSH
 else
 #----system mode----
     SHARE_DIR="/usr/share"
@@ -48,6 +49,7 @@ if [ $MODE == "system" ]; then
 fi
 
 echo -e "\nProceeding ..... \n"
+chmod +x "$ENGINE"
 #get engine version number
 UE_VERSION=`cat "$ENGINE.version" | python -c "import sys, json; obj=json.load(sys.stdin); print('{}.{}.{}'.format(obj['MajorVersion'],obj['MinorVersion'],obj['PatchVersion']))"`
 echo "Engine Version : $UE_VERSION found."
@@ -56,7 +58,7 @@ echo "Setting as default Editor."
 
 sed -i "s^exe.*^exec \'$ENGINE\' \"\$@\"^g"  "$RES_DIR/unrealengine.sh"
 sed -i "s^Name.*^Name=Unreal Engine $UE_VERSION^g"  "$RES_DIR/unreal-engine.desktop"
-sed -i "s^Exec.*^Exec=unrealengine \%F $ENGINE_FLAGS^g"  "$RES_DIR/unreal-engine.desktop"
+sed -i "s^Exec.*^Exec=$SHELL_DIR/unrealengine \%F $ENGINE_FLAGS^g"  "$RES_DIR/unreal-engine.desktop"
 
 
 install -Dm755 "$RES_DIR/unreal-engine.desktop" "$SHARE_DIR/applications/unreal-engine.desktop"
