@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #-------- Configuration Section Start -----------
 
@@ -23,7 +23,8 @@ ENGINE_FLAGS="-nohighdpi"
 if [ $MODE == "user" ]; then
     echo The MODE is user
     SHARE_DIR="$HOME/.local/share"
-    SHELL_DIR="$HOME/.local/bin"
+    #SHELL_DIR="$HOME/.local/bin"
+    SHELL_DIR="$HOME/bin" #for ArchLinux/ZSH
 else
 #----system----
     SHARE_DIR="/usr/share"
