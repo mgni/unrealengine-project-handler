@@ -8,10 +8,10 @@ This script can automate creation of
 - service menu file for `Dolphin`
 -  This script use `xdg-utils`, `python`, `magick` tools. These tools should be preinstalled on the system. Extra icons are included in res/icon/extra/
 
-Download the Unreal Engine and Bridge zip files from \
+Download the Unreal Engine, Fab and Bridge zip files from \
 https://www.unrealengine.com/en-US/linux
 
-Extract to desire location.
+Extract the zip files to desire location.
 
 Find the "Engine" folder and put these folder and files along with "Engine" folder.
 
@@ -19,6 +19,10 @@ Find the "Engine" folder and put these folder and files along with "Engine" fold
 - 📄 install.sh
 - 📄 uninstall.sh
 
+![](res/image/ue_annotation.png)
+
+### Service Menu for Dolphin file manager
+![](res/image/dolphin_service_menu.png)
 
 ## Installation
 
