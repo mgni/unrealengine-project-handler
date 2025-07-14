@@ -102,9 +102,9 @@ Exec=/bin/sh -c 'for f in Binaries Intermediate Saved DerivedDataCache; do rm -r
 [Desktop Action GenerateProjectFiles]
 Name=Generate Project Files for VS Code
 Icon=visual-studio-code
-Exec="$projectGenerator" -projectfiles -project="%u" -game -engine -progress
+Exec=/bin/sh -c '"$projectGenerator" -projectfiles -project="%u" -game -engine -progress && notify-send "Unreal Engine" "Project files generated successfully" -i unreal-engine'
 EOF
-fi
+    fi
 }
 
 if [ $SERVICE_MENU == "true" ]; then
@@ -121,3 +121,4 @@ if [ $SERVICE_MENU == "true" ]; then
 fi
 
 echo 'Installation done!'
+echo 'You can now run Unreal Engine from your application menu or by typing "unrealengine" in the terminal.'
