@@ -49,9 +49,7 @@ for x in 36 48 64 72 96 128 256 512
 do
 	magick -density $x -background none "$ICON_DIR/unreal-engine.svg" "$ICON_DIR/unreal-engine-$x.png"
 	xdg-icon-resource install --novendor --noupdate --mode user --size $x "$ICON_DIR/unreal-engine-$x.png" unreal-engine
-	xdg-icon-resource install --novendor --noupdate --mode user --size $x "$ICON_DIR/unreal-engine-$x.png" unreal-engine
 	magick -density $x -background none "$ICON_DIR/x-uproject.svg" "$ICON_DIR/project-$x.png"
-	xdg-icon-resource install --novendor --noupdate --mode user --context mimetypes --size $x "$ICON_DIR/project-$x.png" unrealengine-project
 	xdg-icon-resource install --novendor --noupdate --mode user --context mimetypes --size $x "$ICON_DIR/project-$x.png" unrealengine-project
 
     rm "$ICON_DIR/unreal-engine-$x.png"
@@ -70,10 +68,6 @@ echo Preparing to install Service Menu File for file manager ...
 
 create_service_menu_for_dolphin ()
 {
-    # not working in 5.6
-    #local projectGenerator="$PWD/Engine/Build/BatchFiles/Linux/GenerateProjectFiles.sh"
-    
-    # 5.6
     local projectGenerator="$PWD/Engine/Build/BatchFiles/Linux/GenerateProjectFiles.sh"
 
     if [[ -f /usr/bin/dolphin ]]; then
